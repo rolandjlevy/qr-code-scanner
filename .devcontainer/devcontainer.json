@@ -1,0 +1,19 @@
+{
+    "name": "Front-end Web Project",
+    "customizations": {
+      "vscode": {
+        "extensions": ["esbenp.prettier-vscode", "dbaeumer.vscode-eslint"],
+        "settings": {
+          "editor.tabSize": 2,
+          "terminal.integrated.defaultProfile.linux": "bash",
+          "workbench.colorTheme": "Default Dark+",
+          "files.autoSave": "onFocusChange",
+          "editor.formatOnSave": true
+        }
+      },
+      "features": {
+        "ghcr.io/devcontainers-contrib/features/live-server:1": {}
+      },
+      "postCreateCommand": "echo 'Environment ready!'"
+    }
+  }
