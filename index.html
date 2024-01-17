@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickScan Pro - QR Code Scanner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>QuickScan Pro</h1>
+            <p>Scan QR codes or different types of Bar Codes from your web browser using your camera. Scanning is supported on PC, Mac, Android or IOS and works 100% free! No signups required!</p>
+        </header>
+        <div class="scanner-area" id="scanner">
+            <video id="stream" style="width: 50vw; height: 50vh;"/>
+        </div>
+        <textarea id="result" placeholder="Scanned code will appear here..."></textarea>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
