@@ -26,23 +26,21 @@ header p {
 }
 
 .scanner-area {
-  border: 3px dashed #ff0000;
-  height: 400px;
-  width: 400px;
+  width: 100%;
   position: relative;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f8f8f8;
 }
 
-.scanner-area p {
-  color: #999;
-  font-style: italic;
+.scanner-area > .stream {
+  border: 3px dashed #ff0000;
+  height: 300px;
+  width: 400px;
 }
 
-#result {
+.result {
   width: 100%;
   height: 100px;
   padding: 10px;
@@ -51,4 +49,5 @@ header p {
   border-radius: 5px;
   resize: vertical;
   font-size: 1em;
+  font-family: 'Arial', sans-serif;
 }

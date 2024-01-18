@@ -9,5 +9,10 @@
 ### To run a front-end project in a Codespace
 
 - Terminal > npm i -g http-server
-- Terminal > http-server
+- Terminal > http-server -c-1
 - click 'Open in Browser'
+
+### Links
+
+- [favicon from icons8.com](https://icons8.com)
+- [original article for QR code reader](https://www.ycmjason.com/posts/detecting-barcode-from-the-browser-d7n/)

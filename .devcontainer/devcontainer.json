@@ -1,14 +1,18 @@
 {
-    "name": "Front-end Web Project",
-    "customizations": {
-      "vscode": {
-        "extensions": ["esbenp.prettier-vscode", "dbaeumer.vscode-eslint"],
-        "settings": {
-          "editor.tabSize": 2,
-          "terminal.integrated.defaultProfile.linux": "bash",
-          "workbench.colorTheme": "Default Dark+",
-          "files.autoSave": "onFocusChange",
-          "editor.formatOnSave": true
+  "name": "Front-end Web Project",
+  "customizations": {
+    "vscode": {
+      "extensions": ["esbenp.prettier-vscode", "dbaeumer.vscode-eslint"],
+      "settings": {
+        "editor.tabSize": 2,
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "workbench.colorTheme": "Default Dark+",
+        "files.autoSave": "onFocusChange",
+        "editor.formatOnSave": true,
+        "files.watcherExclude": {
+          "**/.git/objects/**": true,
+          "**/.git/subtree-cache/**": true,
+          "**/node_modules/**": true
         }
       },
       "features": {
@@ -17,3 +21,4 @@
       "postCreateCommand": "echo 'Environment ready!'"
     }
   }
+}
