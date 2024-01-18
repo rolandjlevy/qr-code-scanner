@@ -21,35 +21,40 @@ const resultEl = document.querySelector('.result');
     videoEl.srcObject = stream;
     await videoEl.play();
 
-    if (!('BarcodeDetector' in window)) {
-      // Exit early since there's no support for BarcodeDetector
-      alert('Barcodes or QR codes are not supported by your browser');
-      return;
-    }
+    try {
+      if (!('BarcodeDetector' in window)) {
+        // Exit early since there's no support for BarcodeDetector
+        alert('Barcodes or QR codes are not supported by your browser');
+        // return;
+      }
 
-    // Get supported formats
-    const supportedFormats = await BarcodeDetector.getSupportedFormats();
-    const supportsQRCode = supportedFormats.includes('qr_code');
-    const supportsBarcodes = supportedFormats.some((format) =>
-      ['code_39', 'codabar', 'ean_13'].includes(format)
-    );
+      // Get supported formats
+      const supportedFormats = await BarcodeDetector.getSupportedFormats();
+      const supportsQRCode = supportedFormats.includes('qr_code');
+      const supportsBarcodes = supportedFormats.some((format) =>
+        ['code_39', 'codabar', 'ean_13'].includes(format)
+      );
 
-    // Construct an alert message based on supported formats
-    let alertMessage = '';
-    if (supportsQRCode && !supportsBarcodes) {
-      alertMessage =
-        'Barcodes are not supported by your browser but QR codes are supported';
-    } else if (!supportsQRCode && supportsBarcodes) {
-      alertMessage =
-        'QR codes are not supported by your browser but Barcodes are supported';
-    } else if (!supportsQRCode && !supportsBarcodes) {
-      alertMessage = 'Barcodes or QR codes are not supported by your browser';
-    }
+      // Construct an alert message based on supported formats
+      let alertMessage = '';
+      if (supportsQRCode && !supportsBarcodes) {
+        alertMessage =
+          'Barcodes are not supported by your browser but QR codes are supported';
+      } else if (!supportsQRCode && supportsBarcodes) {
+        alertMessage =
+          'QR codes are not supported by your browser but Barcodes are supported';
+      } else if (!supportsQRCode && !supportsBarcodes) {
+        alertMessage = 'Barcodes or QR codes are not supported by your browser';
+      }
 
-    // Alert the user if any formats are unsupported.
-    if (alertMessage.length) {
-      alert(`${alertMessage} ${JSON.stringify(supportedFormats, null, 2)}`);
-      return; // Exit early since the necessary supports are not present.
+      // Alert the user if any formats are unsupported.
+      if (alertMessage.length) {
+        alert(`${alertMessage} ${JSON.stringify(supportedFormats, null, 2)}`);
+        // return;
+      }
+    } catch (error) {
+      console.error(error);
+      resultEl.textContent = error.message;
     }
 
     // both QR codes and barcodes are supported so proceed with barcode detection

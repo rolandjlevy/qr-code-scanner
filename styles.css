@@ -35,7 +35,7 @@ header p {
 }
 
 .scanner-area > .stream {
-  border: 3px dashed #ff0000;
+  border: 3px dashed #00cc33;
   height: 300px;
   width: 400px;
 }
