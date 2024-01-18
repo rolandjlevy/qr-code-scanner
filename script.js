@@ -48,7 +48,7 @@ const resultEl = document.querySelector('.result');
 
     // Alert the user if any formats are unsupported.
     if (alertMessage.length) {
-      alert(alertMessage, JSON.stringify(supportedFormats, null, 2));
+      alert(`${alertMessage} ${JSON.stringify(supportedFormats, null, 2)}`);
       return; // Exit early since the necessary supports are not present.
     }
 
