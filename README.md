@@ -16,3 +16,4 @@
 
 - [favicon from icons8.com](https://icons8.com)
 - [original article for QR code reader](https://www.ycmjason.com/posts/detecting-barcode-from-the-browser-d7n/)
+- [BarcodeDetector from MDN docs](https://developer.mozilla.org/en-US/docs/Web/API/BarcodeDetector)
